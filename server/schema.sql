@@ -64,10 +64,10 @@ CREATE TABLE IF NOT EXISTS user_attempts (
 );
 
 -- Increment total XP function
-CREATE OR REPLACE FUNCTION increment_total_xp(user_id UUID, delta INTEGER)
+CREATE OR REPLACE FUNCTION increment_total_xp(x_user_id UUID, x_delta INTEGER)
 RETURNS void AS $$
 BEGIN
-  UPDATE users SET total_xp = total_xp + delta WHERE id = user_id;
+  UPDATE users SET total_xp = total_xp + x_delta WHERE id = x_user_id;
 END;
 $$ LANGUAGE plpgsql;
 

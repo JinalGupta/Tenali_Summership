@@ -8,12 +8,9 @@ export default function OTPInput({ length = 6, value, onChange, onComplete, erro
 
   const handleChange = (idx, val) => {
     if (!/^\d?$/.test(val)) return
-    const next = val === '' ? '' : val
-    const newVal = value.slice(0, idx) + next + value.slice(idx + 1)
+    const newVal = value.slice(0, idx) + val + value.slice(idx + 1)
     onChange(newVal)
-    if (next && idx < length - 1) {
-      refs.current[idx + 1]?.focus()
-    }
+    if (val && idx < length - 1) refs.current[idx + 1]?.focus()
     if (newVal.length === length) onComplete?.(newVal)
   }
 
@@ -57,11 +54,11 @@ export default function OTPInput({ length = 6, value, onChange, onComplete, erro
           className={`
             w-12 h-14 text-center text-2xl font-mono font-semibold
             border-2 rounded-input transition-all duration-200
-            focus:outline-none
+            focus:outline-none select-none
             ${error
-              ? 'border-coral bg-coral/5 text-coral focus:border-coral'
+              ? 'border-coral bg-coral/5 text-coral'
               : focused === idx
-                ? 'border-teal bg-teal/5 text-navy focus:border-teal'
+                ? 'border-teal bg-teal/5 text-navy'
                 : d
                   ? 'border-teal/60 bg-white text-navy'
                   : 'border-gray-200 bg-white text-navy'
