@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/authStore'
 import axios from 'axios'
 
-const API = 'http://localhost:3001/api'
+const API = import.meta.env.VITE_API_URL || 'http://localhost:3001/api'
 
 const ILLUSTRATIONS = [
   <svg viewBox="0 0 80 80" fill="none" className="w-full h-full"><circle cx="40" cy="40" r="36" stroke="#0F2D5A" strokeWidth="2" /><circle cx="40" cy="40" r="4" fill="#0F2D5A" /><path d="M40 40 L40 16" stroke="#009B83" strokeWidth="3" strokeLinecap="round" /><path d="M40 40 L56 52" stroke="#F5A623" strokeWidth="2" strokeLinecap="round" />{[...Array(12)].map((_, i) => { const a = (i * 30 - 90) * Math.PI / 180; return <circle key={i} cx={40 + 30 * Math.cos(a)} cy={40 + 30 * Math.sin(a)} r="2" fill="#0F2D5A" /> })}</svg>,
