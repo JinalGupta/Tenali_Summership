@@ -336,4 +336,4 @@ app.post('/api/attempts', authenticate, async (req, res) => {
 
 // ── Start ──────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Tenali server running on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Tenali server running on port ${PORT}`));
