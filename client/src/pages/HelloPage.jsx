@@ -32,9 +32,18 @@ export default function HelloPage() {
           Adaptive questions. Incremental mastery.
         </p>
 
+        <div className="mt-10 flex gap-4 justify-center flex-wrap">
+          <Link to="/login" className="px-8 py-3 bg-teal text-white font-semibold rounded-btn hover:bg-teal-dark transition-colors">
+            Log in
+          </Link>
+          <Link to="/register" className="px-8 py-3 bg-white/10 border-2 border-white/30 text-white font-semibold rounded-btn hover:bg-white/20 transition-colors">
+            Create account
+          </Link>
+        </div>
+
         <div className="mt-12 flex items-center gap-3 justify-center">
           <div className="w-2 h-2 rounded-full bg-teal animate-pulse" />
-          <p className="text-white/40 text-sm font-mono">v0.1 — Shell deployed</p>
+          <p className="text-white/40 text-sm font-mono">v0.2 — Auth + Backend wired</p>
           <div className="w-2 h-2 rounded-full bg-teal animate-pulse" />
         </div>
       </motion.div>
