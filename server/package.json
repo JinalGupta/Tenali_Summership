@@ -4,8 +4,7 @@
   "description": "Tenali API server - Express + Supabase",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
